@@ -18,7 +18,7 @@ The test suite validates three main user flows:
 
 * Node.js (LTS)
 * Java JDK (required by Appium / Android tooling)
-* Android SDK
+* Android-NativeDemoApp.apk
 * Android Studio
 
 ### 2.2 Environment Variables
@@ -28,21 +28,35 @@ Ensure the following variables are set:
 ```bash
 ANDROID_HOME=/path/to/Android/Sdk
 ANDROID_SDK_ROOT=/path/to/Android/Sdk
+JAVA_HOME=/path/to/jdk
 ```
 
 ### 2.3 Installed Dependencies
 
 ```bash
+npm init -y
+```
+```bash
 npm install webdriverio @wdio/cli @wdio/mocha-framework appium fs
 ```
+```bash
+npm install -g appium
+```
+```bash
+appium driver install uiautomator2
+```
+```bash
+npm install @wdio/cli
+```
 
-### 2.4 Appium
+### 2.4 Running the Test
 
-* Appium server is running before executing tests
-* Android driver is properly detected
-
-### 2.5 Running the Test
-
+```bash
+Open the virtual device from Android Studio - Pixel 5
+```
+```bash
+appium
+```
 ```bash
 npx wdio run wdio.conf.js
 ```
@@ -80,60 +94,56 @@ For unstable dialogs (e.g. OK button), the test tries **multiple selectors seque
 
 ## 4. AI Tools Utilized
 
-### 4.1 ChatGPT (Test Design & Debugging)
-
 AI was used to:
 
+* Create template test structure
 * Design robust login validation logic (success OR error)
 * Improve wait strategies using `waitUntil`
 * Suggest fallback selectors for unstable UI elements
-* Add defensive debugging (screenshots & page source dumps)
 * Improve swipe gesture reliability
 
-### 4.2 Benefits of AI Usage
+### 4.1 ChatGPT (Test Design)
 
+<p align="center">
+  <br>
+<img src="./debugginginstallation.png" alt="ChatGPT" width="400">
+  <br>
+ This example shows how I use ChatGPT to help with installation.
+ <br><br>
+</p>
+
+### 4.2 Github Copilot (Debugging Test Script)
+
+<p align="center">
+  <br>
+<img src="./debuggingscript.png" alt="Copilot" width="400">
+  <br>
+ This example shows how I use Github Copilot chat to help with debugging.
+ <br><br>
+</p>
+
+### 4.3 Claude (Vibe Code)
+
+<p align="center">
+  <br>
+<img src="./claude.png" alt="Claude" width="400">
+  <br>
+ This example shows how I use Claude to help with coding.
+ <br><br>
+</p>
+
+### 4.4 Benefits of AI Usage
+
+* Help with installation
+* Help with test structure
 * Faster root‑cause analysis
-* Reduced flaky tests
-* Cleaner, more readable test structure
 * Production‑style defensive automation patterns
 
 ---
 
-## 5. Code Structure & Commenting Strategy
+## 5. Test Cases
 
-### 5.1 Defensive Automation
-
-Each critical interaction includes:
-
-* `waitForExist`
-* Try/catch blocks
-* Debug artifacts on failure (`.xml` + `.png`)
-
-### 5.2 Example (Login Result Handling)
-
-```js
-// Wait until either success or error message appears
-await driver.waitUntil(async () => {
-  const s = await $(successTitle).isExisting().catch(() => false);
-  const e = await $(errorMessage).isExisting().catch(() => false);
-  return s || e;
-}, { timeout: 7000 });
-```
-
-### 5.3 Debug Artifact Strategy
-
-On failure, the test automatically saves:
-
-* Page source (`.xml`)
-* Screenshot (`.png`)
-
-This makes post‑execution debugging much faster.
-
----
-
-## 6. Test Cases
-
-### 6.1 Test Case 1 – Login Flow
+### 5.1 Test Case 1 – Login Flow
 
 **Steps:**
 
@@ -154,7 +164,7 @@ This makes post‑execution debugging much faster.
 
 ---
 
-### 6.2 Test Case 2 – Forms Test
+### 5.2 Test Case 2 – Forms Test
 
 **Steps:**
 
@@ -170,7 +180,7 @@ This makes post‑execution debugging much faster.
 
 ---
 
-### 6.3 Test Case 3 – Swipe / Gesture Test
+### 5.3 Test Case 3 – Swipe / Gesture Test
 
 **Steps:**
 
@@ -188,28 +198,28 @@ Three detection strategies are used:
 
 ---
 
-## 7. Test Results & Observations
+## 6. Test Results & Observations
 
-### 7.1 Stability
+### 6.1 Stability
 
 * Accessibility IDs provided highest reliability
 * Fallback selectors significantly reduced flaky failures
 
-### 7.2 Performance
+### 6.2 Performance
 
 * Explicit waits outperform static pauses
 * Swipe gestures require small delays for UI updates
 
-### 7.3 Debugging Efficiency
+### 6.3 Debugging Efficiency
 
 * Automatic screenshots + XML dumps greatly improved failure analysis
 * Page source inspection revealed cases where text existed but was not visible
 
 ---
 
-## 8. Conclusion
+## 6. Conclusion
 
-This test suite demonstrates **production‑ready mobile automation practices**:
+This test suite demonstrates production‑ready mobile automation practices:
 
 * Defensive coding
 * Multi‑locator strategies
@@ -220,4 +230,4 @@ The approach is scalable, maintainable, and suitable for CI pipelines.
 
 ---
 
-**Author:** Handi Wijaya
+
