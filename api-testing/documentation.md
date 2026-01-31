@@ -3,7 +3,6 @@
 **Project:** JSONPlaceholder API Testing  
 **Base URL:** https://jsonplaceholder.typicode.com  
 **Tool Used:** Postman  
-**API Type:** Mock REST API  
 
 ---
 
@@ -14,7 +13,7 @@ This document describes API test cases executed against **JSONPlaceholder**, a p
 The purpose of this testing is to:
 - Validate API behavior for all HTTP methods
 - Cover both positive and negative scenarios
-- Document differences between expected real-world behavior and mock API behavior
+- Document differences between expected and actual behavior
 
 I use ChatGPT to create test cases and documentation
 
@@ -23,12 +22,6 @@ I use ChatGPT to create test cases and documentation
     <img src="chatgpt%20prompt.png" alt="Copilot test template suggestion" width="400">
   <br>
 </p>
-
-> ⚠️ **Important Note**  
-> JSONPlaceholder is a **mock API**:
-> - No real database persistence  
-> - No strict input validation  
-> - Non-existing resource operations may still return successful responses  
 
 ---
 
