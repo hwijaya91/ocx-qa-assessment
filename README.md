@@ -228,7 +228,7 @@ This section identifies realistic edge cases based on the actual Web, API, and M
 
 ---
 
-## 4. Scalability Strategy (Bonus)
+## 4. Scalability Strategy
 
 ### a. Scaling to 100+ Test Cases
 
