@@ -24,7 +24,7 @@ Automated end-to-end purchase flow test on https://www.demoblaze.com, from produ
 - **ChatGPT**: Assist in debugging
 <p align="center">
   <br>
-<img src="chatgpt%20syntax.png" alt="ChatGPT" width="400">
+<img src="test-script-cypress/chatgpt%20syntax.png" alt="ChatGPT" width="400">
   <br>
  This example shows how I use ChatGPT to remind me of Cypress syntax while debugging test scripts.
  <br><br>
@@ -33,11 +33,11 @@ Automated end-to-end purchase flow test on https://www.demoblaze.com, from produ
 - **GitHub Copilot**: Assisted with test structure and predict next steps
 <p align="center">
   <br>
-  <img src="copilot%20kasi%20template.png" alt="Copilot test template suggestion" width="400">
+  <img src="test-script-cypress/copilot%20kasi%20template.png" alt="Copilot test template suggestion" width="400">
   <br>
 This example shows how I use GitHub Copilot to generate test structure, making test creation faster and easier.
   <br><br>
-  <img src="copilot%20prediksi.png" alt="Copilot Prediction" width="400">
+  <img src="test-script-cypress/copilot%20prediksi.png" alt="Copilot Prediction" width="400">
   <br>
   This example shows how GitHub Copilot predicts the next test steps based on the existing code.
 </p>

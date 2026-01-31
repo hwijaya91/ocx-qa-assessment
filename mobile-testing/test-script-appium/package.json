@@ -17,7 +17,7 @@
     "@wdio/mocha-framework": "^9.23.2",
     "@wdio/spec-reporter": "^9.23.2",
     "appium": "^3.2.0",
-    "appium-uiautomator2-driver": "^6.7.13",
+    "appium-uiautomator2-driver": "^6.7.15",
     "webdriverio": "^9.23.2"
   }
 }
