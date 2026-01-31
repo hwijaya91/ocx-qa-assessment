@@ -217,7 +217,7 @@ Three detection strategies are used:
 
 ---
 
-## 6. Conclusion
+## 7. Conclusion
 
 This test suite demonstrates production‑ready mobile automation practices:
 
