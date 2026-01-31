@@ -7,15 +7,15 @@ Automated end-to-end purchase flow test on https://www.demoblaze.com, from produ
 
 ## Test Flow
 
-| Task | Action | Verification |
-|------|--------|--------------|
-| 1. Navigate | Visit demoblaze.com | Page loads with navbar contain PRODUCT STORE |
-| 2. Select Product | Click Monitors on categories section → ASUS Full HD | Product page displays |
-| 3. Add to Cart | Click "Add to cart" | Alert shows "Product added" |
-| 4. View Cart | Navigate to Cart | Product visible in table |
-| 5. Checkout | Fill form & click Purchase | Form accepts all inputs |
-| 6. Confirm Order | Verify alert | "Thank you for your purchase!" appears |
-| 7. Capture Order ID | Screenshot & extract ID | Order ID logged |
+| No | Task | Action | Verification |
+|----|------|--------|--------------|
+| 1  |Navigate | Visit demoblaze.com | Page loads with navbar contain PRODUCT STORE |
+| 2  |Select Product | Click Monitors on categories section → ASUS Full HD | Product page displays |
+| 3  |Add to Cart | Click "Add to cart" | Alert shows "Product added" |
+| 4  |View Cart | Navigate to Cart | Product visible in table |
+| 5  |Checkout | Fill form & click Purchase | Form accepts all inputs |
+| 6  |Confirm Order | Verify alert | "Thank you for your purchase!" appears |
+| 7  |Capture Order ID | Screenshot & extract ID | Order ID logged |
 
 ---
 
