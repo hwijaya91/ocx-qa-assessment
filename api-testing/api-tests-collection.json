@@ -1,0 +1,988 @@
+{
+	"info": {
+		"_postman_id": "360a3d21-a4b9-4469-9dae-998de00d5d39",
+		"name": "ocx-qa-assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23108429"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "All posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts by valid ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts by invalid ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 404', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(404)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 1000ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/99999999999",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"99999999999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 201', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(201)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Handi\",\r\n  \"body\": \"Wijaya\",\r\n  \"userId\": 88888\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new posts with empty body",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 201', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(201)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update post fully",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 1000ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"id\": 1,\r\n    \"title\": \"Handi Wijaya\",\r\n    \"body\": \"OCX test\"\r\n}"
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update non-exist post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 500', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(500)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 1000ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 88888,\r\n    \"id\": 88888,\r\n    \"title\": \"Handi Wijaya\",\r\n    \"body\": \"OCX test\"\r\n}"
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/88888",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"88888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial post update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Handi Wijaya\",\r\n    \"body\": \"OCX test\"\r\n}"
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial non-exist post update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=UTF-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Handi Wijaya\",\r\n    \"body\": \"OCX test\"\r\n}"
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/8888899999",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"8888899999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "All comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comments by valid ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comments by invalid ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 404', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(404)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/88888",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"88888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 201', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(201)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"postId\": 1,\r\n        \"id\": 88888,\r\n        \"name\": \"Handi WIjaya\",\r\n        \"email\": \"hwijaya@gmail.com\",\r\n        \"body\": \"OCX test\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new comment with empty body",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 201', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(201)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update comment fully",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 1000ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"postId\": 1,\r\n        \"id\": 88888,\r\n        \"name\": \"Handi WIjaya\",\r\n        \"email\": \"hwijaya@gmail.com\",\r\n        \"body\": \"OCX test\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update non-exist comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 500', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(500)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 1000ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"postId\": 1,\r\n        \"id\": 88888,\r\n        \"name\": \"Handi WIjaya\",\r\n        \"email\": \"hwijaya@gmail.com\",\r\n        \"body\": \"OCX test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/88888",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"88888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial comment update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"hwijaya@gmail.com\",\r\n        \"body\": \"OCX test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial non-exist comment update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"hwijaya@gmail.com\",\r\n        \"body\": \"OCX test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/88888",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"88888"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Status code must be 200', function(){\r",
+									"    pm.expect(pm.response.code).to.eql(200)\r",
+									"})\r",
+									"\r",
+									"pm.test('response time less than 500ms',function(){\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/comments/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
